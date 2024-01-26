@@ -11,6 +11,7 @@ import COPYICON_SVG from '@/assets/svg/copyicon.svg'
 
 import {useSpring,animated} from 'react-spring'
 import { useState } from 'react'
+import { motion } from "framer-motion"
 
 //@ts-ignore
 import {ReactHeight} from 'react-height';
@@ -112,7 +113,11 @@ function AboutItem({item}:any){
       }, 200);
     }
   }
-  return <div className='column aboutItemView'>
+  return <motion.div className='column aboutItemView' 
+    initial={{ opacity: 0, marginLeft: 200 }}
+    whileInView={{ opacity: 1, marginLeft: 0 }}
+    viewport={{ once: true }}
+    >
     <div className='rowBetween' style={{cursor:'pointer'}} onClick={onShow}>
       <div className='row'>
         <img className={`aboutIcon ${show ? 'aboutIconrotate1' : 'aboutIconrotate'}`} src={item.icon}/>
@@ -125,7 +130,7 @@ function AboutItem({item}:any){
       <div className='aboutLine'/>
     </animated.div>}
     {!showAni && <div className='aboutLine'/>}
-  </div>
+  </motion.div>
 }
 const products:any[] = [
   {
@@ -159,13 +164,17 @@ function ProductsSub({item}:any){
   function onMouseLeave(){
     setMouseEnter(false)
   }
-  return <div className='columnCenter ProductsSubView' onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+  return <motion.div className='columnCenter ProductsSubView' onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}
+  initial={{ opacity: 0, scale: 0.8 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  viewport={{ once: true }}
+  >
     <img className={`ProductsSubViewImg ${mouseEnter ? 'ProductsSubViewImgBig' : 'ProductsSubViewImgSmall'}`} src={item.icon}/>
     <div className='columnCenter productContent'>
       <div className='ProductsSubTtile'>{item.title}</div>
       <div className='ProductsSubDes'>{item.des}</div>
     </div>
-  </div>
+  </motion.div>
 }
 const latests:any[] = [
   {
@@ -189,27 +198,36 @@ function Latest(){
     <div className='aboutTitle'>LATEST UPDATE</div>
     <div className='latestViewSubView'>
       {
-        latests.map((item:any)=>{
-          return <LatestSub key={item.title} item={item}/>
+        latests.map((item:any,index:number)=>{
+          return <LatestSub key={item.title} item={item} index={index}/>
         })
       }
     </div>
   </div>
 }
-function LatestSub({item}:any){
-  return <div className='column LatestSubView'>
+function LatestSub({item,index}:any){
+  return <motion.div className='column LatestSubView' 
+  initial={{ opacity: 0, y: 100 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5, delay: index * 0.1}}
+  viewport={{ once: true }}
+  >
     <img className='latestImg' src={item.icon}/>
     <div className='latesttime'>{item.time}</div>
     <span className='latesttitle'>{item.title}</span>
-  </div>
+  </motion.div>
 }
 function Chat(){
   return <div className='columnCenter chatView'>
     <div className='chatTitle'>Let’s Chat</div>
     <div className='chatTitle'>We Respond Fast</div>
-    <div className='chatButton'>
+    <motion.div className='chatButton'
+      whileInView={{ scale:[1,1.2,0.8,1.1,0.9,1] }}
+      transition={{ duration: 0.5,delay:0.5}}
+      viewport={{ once: true }}
+    >
       <img className='chatTele' src={TELEGRAM_SVG}/>
-    </div>
+    </motion.div>
     <div className='row'>
       <div className='chatSubTitle'>Privacy Policy</div>
       <div className='chatSubTitle'>Term & Conditions</div>
@@ -218,7 +236,7 @@ function Chat(){
     </div>
     <div className='chatcopy'>
       <img className='copyIcon' src={COPYICON_SVG}/>
-    Copyright Zestlabs 2024
+      Copyright Zestlabs 2024
     </div>
   </div>
 }
