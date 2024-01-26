@@ -1,7 +1,290 @@
-.box {
+.topView {
+  margin-top:15.4rem;
+  width: 100%;
+}
+.topTopView {
+  margin-bottom: 7.2rem;
+}
+.ZestLab {
   color: #000;
   font-family: InterBold;
-  font-size: 23px;
+  font-size: 12rem;
+  font-weight: 700;
+  flex:1;
+  @media screen and (max-width:1020px) {
+    font-size: 10rem;
+  }
+}
+.topRightView {
+  flex: 1;
+  margin-left: 1.6rem;
+}
+.ZestLabDes {
+  color: #000;
+  font-family: InterBold;
+  font-size: 2.3rem;
   font-style: normal;
   font-weight: 700;
+  margin-bottom: 2rem;
+}
+.contactButton {
+  height: 3.6rem;
+  border-radius: 1.8rem;
+  border: 1px solid #000;
+  background: #FFF;
+  color: #000;
+  padding: 0 2rem;
+  font-family: InterSemiBold;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 1.6rem;
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+}
+.contactButton:hover {
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+.topIconView {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(2,1fr);
+  gap: 2.5rem;
+}
+.topIconSubView {
+  width: 100%;
+  height: 100%;
+}
+.aboutView {
+  margin-top: 11.2rem;
+}
+.aboutTitle {
+  color: #141416;
+  font-family: InterBold;
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 5.2rem;
+}
+.aboutItemView {
+  margin-top: 3rem;
+}
+.aboutIcon {
+  width: 3.8rem;
+  margin-right: 2.2rem;
+}
+.aboutIconrotate1{
+  transform:rotate(180deg);
+  transition:all .3s linear;
+  -webkit-transform:rotate(180deg);
+  -webkit-transtion:all .3s linear;
+}
+.aboutIconrotate{
+  transform:rotate(0);
+  transition:all .3s linear;
+  -webkit-transform:rotate(0);
+  -webkit-transtion:all .3s linear;
+}
+.aboutLine {
+  width: 100%;
+  background: #ADADAD;
+  height: 1px;
+  margin-top: 3rem;
+}
+.aboutSubTitle {
+  color: #141416;
+  font-family: InterBold;
+  font-size: 3rem;
+  font-weight: 700;
+}
+.aboutDes {
+  color: #6B6B6B;
+  font-family: InterMedium;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  margin-top: 3rem;
+  transform-origin: top left;
+}
+.ProductsView {
+  margin-top: 11.6rem;
+}
+.productItem {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(1,auto);
+  gap: 2rem;
+}
+.ProductsSubView {
+  border-radius: 3rem;
+  background: #F2F4F7;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+.ProductsSubViewImg {
+  width: 80%;
+  margin: 4rem 0;
+  z-index: 1;
+}
+.ProductsSubViewImgBig{
+  animation-name: scaleAnimation; // 动画名
+  animation-duration: 0.5s; // 动画时长
+  animation-iteration-count: 1; // 永久动画
+  transition-timing-function: ease-in-out; // 动画过渡
+  animation-fill-mode: forwards;
+}
+.ProductsSubViewImgSmall{
+  animation-name: scaleAnimationS; // 动画名
+  animation-duration: 0.5s; // 动画时长
+  animation-iteration-count: 1; // 永久动画
+  transition-timing-function: ease-in-out; // 动画过渡
+  animation-fill-mode: forwards;
+}
+@keyframes scaleAnimationS { // 动画设置
+  0% {
+      transform: scale(1.2);
+  }
+  50% {
+      transform: scale(0.8);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+@keyframes scaleAnimation { // 动画设置
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.3);
+  }
+  100% {
+      transform: scale(1.2);
+  }
+}
+.productContent {
+  position: absolute;
+}
+.ProductsSubTtile {
+  color: #000;
+  font-family: InterBold;
+  font-size: 4rem;
+  font-weight: 700;
+  z-index: 2;
+  @media screen and (max-width:1020px) {
+    font-size: 3rem;
+  }
+}
+.ProductsSubDes {
+  color: #B6B3B3;
+  font-family: InterBold;
+  font-size: 2rem;
+  font-weight: 700;
+  z-index: 2;
+  @media screen and (max-width:1020px) {
+    font-size: 1.6rem;
+  }
+}
+.latestView {
+  margin-top: 15.2rem;
+}
+.latestViewSubView {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(1,auto);
+  gap: 2rem;
+}
+.LatestSubView {
+  width: 100%;
+  cursor: pointer;
+}
+.latestImg {
+  width: 100%;
+  margin-bottom: 2.4rem;
+}
+.latesttime {
+  color: #6D6D6D;
+  font-family: InterMedium;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-left: 2rem;
+}
+.latesttitle{
+  margin-left: 2rem;
+  margin-top: 1.2rem;
+  color: #000;
+  font-family: InterBold;
+  font-size: 2.4rem;
+  font-weight: 700;
+  width:90%;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  @media screen and (max-width:1020px) {
+    font-size: 1.8rem;
+  }
+}
+.chatView {
+  border-radius: 3rem;
+  background: #F2F4F7;
+  padding-top: 8.7rem;
+  padding-bottom: 2.9rem;
+  margin-top: 8.8rem;
+  margin-bottom: 6.8rem;
+}
+.chatTitle {
+  color: #000;
+  text-align: center;
+  font-family: InterBold;
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 7rem; /* 78px */
+}
+.chatButton {
+  display: flex;
+  width: 25.2rem;
+  height: 6.6rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3.3rem;
+  background: #00D264;
+  margin-top: 3rem;
+  margin-bottom: 6.3rem;
+  cursor: pointer;
+}
+.chatButton:hover {
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+.chatTele {
+  width: 4.2rem;
+}
+.chatSubTitle {
+  color: #ABABAB;
+  font-family: InterMedium;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 0 2rem;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 0.5rem;
+}
+.chatSubTitle:hover {
+  border-bottom: 1px solid #ABABAB;
+}
+.chatcopy{
+  color: #6B6B6B;
+  margin-top: 5rem;
+  font-family: InterMedium;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.copyIcon {
+  margin-right: 1rem;
+  width: 1.6rem;
 }
